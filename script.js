@@ -1,13 +1,11 @@
-// Set Footer Year
-document.getElementById('year').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("LG Subscribe Site Initialized.");
+});
 
-// Smooth Navigation for Anchor Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+// Auto-close Mega Menu when a link is clicked
+document.querySelectorAll('.mega-menu-panel a').forEach(link => {
+    link.addEventListener('click', () => {
+        // Alpine.js handles the state, but we ensure smooth navigation
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
