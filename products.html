@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><title>Lineup | LG Subscribe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-7xl mx-auto py-20 px-4" x-data="{ 
+        sections: [
+            { id: 'water', title: 'Water Purifier', items: [{m:'WD518AN', p:'70', i:'Objet Collection'}, {m:'WD516AN', p:'70', i:'Self-Service'}] },
+            { id: 'styler', title: 'Clothing Specialist', items: [{m:'S3WF', p:'90', i:'LG Styler White'}] },
+            { id: 'vacuum', title: 'Cleaning Specialist', items: [{m:'A9X-RSTEAM', p:'130', i:'CordZero Vacuum'}] }
+        ]
+    }">
+        <template x-for="section in sections">
+            <div :id="section.id" class="mb-24">
+                <h2 class="text-4xl font-black mb-10 border-l-[12px] border-[#A50034] pl-6 uppercase italic" x-text="section.title"></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <template x-for="item in section.items">
+                        <div class="product-card bg-white p-8 rounded-[3rem] group cursor-pointer border border-gray-100">
+                            <div class="product-image-container h-56 bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden">
+                                <img src="https://via.placeholder.com/300x300?text=LG" class="w-40 transition-transform duration-700">
+                            </div>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1" x-text="item.i"></p>
+                            <h3 class="font-black text-2xl mb-4" x-text="item.m"></h3>
+                            <div class="text-[#A50034] font-black text-3xl mb-8 flex items-end">
+                                <span>RM <span x-text="item.p"></span></span>
+                                <span class="text-xs text-gray-400 ml-1 mb-1 font-normal">/mth</span>
+                            </div>
+                            <a :href="'https://wa.me/60124482848?text=I am interested in ' + item.m" class="block w-full text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-[#A50034] transition-colors">Apply Now</a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </template>
+    </div>
+</body>
+</html>
