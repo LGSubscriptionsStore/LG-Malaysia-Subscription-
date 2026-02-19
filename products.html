@@ -1,35 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Lineup | LG Subscribe</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG Subscribe | All Models</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
-    <div class="max-w-7xl mx-auto py-20 px-4" x-data="{ 
+    <div class="max-w-7xl mx-auto py-16 px-4" x-data="{ 
         sections: [
-            { id: 'water', title: 'Water Purifier', items: [{m:'WD518AN', p:'70', i:'Objet Collection'}, {m:'WD516AN', p:'70', i:'Self-Service'}] },
-            { id: 'styler', title: 'Clothing Specialist', items: [{m:'S3WF', p:'90', i:'LG Styler White'}] },
-            { id: 'vacuum', title: 'Cleaning Specialist', items: [{m:'A9X-RSTEAM', p:'130', i:'CordZero Vacuum'}] }
+            { 
+                id: 'water', 
+                title: 'Water Purifier', 
+                items: [
+                    {m:'WD518AN', p:'70', i:'Objet Collection', img:'https://www.lg.com/my/images/water-purifiers/md07564752/gallery/WD518AN-A1.jpg'},
+                    {m:'WD516AN', p:'70', i:'Self-Service', img:'https://www.lg.com/my/images/water-purifiers/md07545465/gallery/WD516AN-A1.jpg'},
+                    {m:'WU525BS', p:'110', i:'Under-Sink Type', img:'https://www.lg.com/my/images/water-purifiers/md07555806/gallery/WU525BS-A1.jpg'},
+                    {m:'WD210MN', p:'60', i:'Tankless Hot/Ambient', img:'https://www.lg.com/my/images/water-purifiers/md06219808/gallery/medium01.jpg'},
+                    {m:'WS410GN', p:'110', i:'PuriCare Stand', img:'https://www.lg.com/my/images/water-purifiers/md07543881/gallery/medium01.jpg'},
+                    {m:'WS510SN', p:'130', i:'Large Capacity Stand', img:'https://www.lg.com/my/images/water-purifiers/md07543884/gallery/medium01.jpg'}
+                ] 
+            },
+            { 
+                id: 'air', 
+                title: 'Air Solution', 
+                items: [
+                    {m:'AS10GDBYO', p:'105', i:'360º Alpha', img:'https://www.lg.com/my/images/air-purifiers/md07564177/gallery/AS10GDBYO-A1.jpg'},
+                    {m:'AS65GDBYO', p:'75', i:'360º Hit', img:'https://www.lg.com/my/images/air-purifiers/md07563820/gallery/AS65GDBYO-A1.jpg'},
+                    {m:'AS20GP', p:'60', i:'PuriCare Petit', img:'https://www.lg.com/my/images/air-purifiers/md07553556/gallery/medium01.jpg'},
+                    {m:'AS60GH', p:'80', i:'PuriCare 360', img:'https://www.lg.com/my/images/air-purifiers/md07563820/gallery/AS65GDBYO-A1.jpg'},
+                    {m:'AS55GGWXO', p:'65', i:'PuriCare Hit', img:'https://www.lg.com/my/images/air-purifiers/md07563820/gallery/AS65GDBYO-A1.jpg'},
+                    {m:'AS25GCBZO', p:'70', i:'AeroTower', img:'https://www.lg.com/my/images/air-purifiers/md07543419/gallery/medium01.jpg'},
+                    {m:'AS35GGW10', p:'45', i:'AeroFurniture', img:'https://www.lg.com/my/images/air-purifiers/md07561845/gallery/medium01.jpg'},
+                    {m:'DD16GMWE1', p:'70', i:'Dehumidifier', img:'https://www.lg.com/my/images/dehumidifier/md07530867/gallery/medium01.jpg'}
+                ] 
+            },
+            { 
+                id: 'laundry', 
+                title: 'Laundry & Floor', 
+                items: [
+                    {m:'WT2520NHEGR', p:'290', i:'WashTower™ Objet', img:'https://www.lg.com/my/images/washing-machines/md07563172/gallery/WT2520NHEGR-A1.jpg'},
+                    {m:'WT1410NHB', p:'220', i:'WashTower™ Compact', img:'https://www.lg.com/my/images/washing-machines/md07557454/gallery/WT1410NHB-A1.jpg'},
+                    {m:'FV1450S2W', p:'100', i:'Front Load Washer', img:'https://www.lg.com/my/images/washing-machines/md07525389/gallery/medium01.jpg'},
+                    {m:'FV1209D4W', p:'130', i:'Washer Dryer', img:'https://www.lg.com/my/images/washing-machines/md07531773/gallery/medium01.jpg'},
+                    {m:'A9X-RSTEAM', p:'130', i:'CordZero Vacuum', img:'https://www.lg.com/my/images/vacuum-cleaners/md07565985/gallery/A9X-RSTEAM-A1.jpg'}
+                ] 
+            },
+            { 
+                id: 'aircond', 
+                title: 'Air Conditioner', 
+                items: [
+                    {m:'S3-Q09JAPPA', p:'80', i:'Dual Inverter 1.0HP', img:'https://www.lg.com/my/images/air-conditioners/md07567755/gallery/medium01.jpg'},
+                    {m:'S3-Q12JAPPA', p:'90', i:'Dual Inverter 1.5HP', img:'https://www.lg.com/my/images/air-conditioners/md07567755/gallery/medium01.jpg'},
+                    {m:'S3-Q18KLPPA', p:'110', i:'Dual Inverter 2.0HP', img:'https://www.lg.com/my/images/air-conditioners/md07567755/gallery/medium01.jpg'}
+                ] 
+            },
+            { 
+                id: 'kitchen', 
+                title: 'Kitchen & Specialist', 
+                items: [
+                    {m:'GC-X24FFC7R', p:'290', i:'InstaView™ French Door', img:'https://www.lg.com/my/images/refrigerators/md07548819/gallery/medium01.jpg'},
+                    {m:'S3WF', p:'90', i:'LG Styler White', img:'https://www.lg.com/my/images/styler/md07522510/gallery/S3WF-A1.jpg'},
+                    {m:'MH6565CPW', p:'40', i:'NeoChef Microwave', img:'https://www.lg.com/my/images/microwave-ovens/md05886638/gallery/medium01.jpg'}
+                ] 
+            },
+            { 
+                id: 'tv', 
+                title: 'Entertainment', 
+                items: [
+                    {m:'OLED77B5PSA', p:'560', i:'77\" OLED 4K', img:'https://www.lg.com/my/images/tvs/md07560867/gallery/medium01.jpg'},
+                    {m:'65QNED87ASA', p:'135', i:'65\" QNED 4K', img:'https://www.lg.com/my/images/tvs/md07562817/gallery/medium01.jpg'},
+                    {m:'S90TY', p:'60', i:'LG Soundbar', img:'https://www.lg.com/my/images/audio/md07567472/gallery/medium01.jpg'}
+                ] 
+            }
         ]
     }">
-        <template x-for="section in sections">
+        <template x-for="section in sections" :key="section.id">
             <div :id="section.id" class="mb-24">
-                <h2 class="text-4xl font-black mb-10 border-l-[12px] border-[#A50034] pl-6 uppercase italic" x-text="section.title"></h2>
+                <h2 class="text-3xl font-black mb-10 border-l-8 border-[#A50034] pl-6 uppercase tracking-tight" x-text="section.title"></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <template x-for="item in section.items">
-                        <div class="product-card bg-white p-8 rounded-[3rem] group cursor-pointer border border-gray-100">
-                            <div class="product-image-container h-56 bg-gray-50 rounded-[2rem] mb-6 flex items-center justify-center overflow-hidden">
-                                <img src="https://via.placeholder.com/300x300?text=LG" class="w-40 transition-transform duration-700">
+                    <template x-for="item in section.items" :key="item.m">
+                        <div class="product-card bg-white p-6 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all group border border-gray-100">
+                            <div class="product-image-container h-52 bg-white rounded-3xl mb-4 flex items-center justify-center overflow-hidden">
+                                <img :src="item.img" :alt="item.m" class="w-40 object-contain">
                             </div>
-                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1" x-text="item.i"></p>
-                            <h3 class="font-black text-2xl mb-4" x-text="item.m"></h3>
-                            <div class="text-[#A50034] font-black text-3xl mb-8 flex items-end">
-                                <span>RM <span x-text="item.p"></span></span>
-                                <span class="text-xs text-gray-400 ml-1 mb-1 font-normal">/mth</span>
-                            </div>
-                            <a :href="'https://wa.me/60124482848?text=I am interested in ' + item.m" class="block w-full text-center bg-black text-white py-4 rounded-2xl font-bold hover:bg-[#A50034] transition-colors">Apply Now</a>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest" x-text="item.i"></p>
+                            <h3 class="font-black text-xl mb-4" x-text="item.m"></h3>
+                            <div class="text-[#A50034] font-black text-2xl mb-6">RM <span x-text="item.p"></span><span class="text-xs text-gray-400">/mth</span></div>
+                            <a :href="'https://wa.me/60124482848?text=Enquiry: ' + item.m" class="block bg-black text-white text-center py-4 rounded-2xl font-bold group-hover:bg-[#A50034] transition">Apply Now</a>
                         </div>
                     </template>
                 </div>
